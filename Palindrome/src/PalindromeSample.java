@@ -32,7 +32,20 @@ public class PalindromeSample {
 		StringBuffer sbWord = new StringBuffer();
 		sbWord.append(word);
 		sbWord.reverse();
-		
+		System.out.format("Palindrome: %s is %s\n", word, palindrome(word));
 		return word.equalsIgnoreCase(sbWord.toString());
+	}
+	
+	private static String palindrome(String word) {
+		// TODO Auto-generated method stub
+		String result = "";
+		
+		for (int i = word.length() - 1; i >= 0; i--) {
+			result += word.charAt(i);
+		}
+		
+		if (!word.equalsIgnoreCase(result))
+			return "not a Palindrome";
+		return result;
 	}
 }
