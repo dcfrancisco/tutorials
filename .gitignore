@@ -6,3 +6,11 @@
 /Palindrome/*.project
 /RemoteSystemsTempFiles
 .metadata
+/RobotGame/bin
+/RobotGame/gen
+/RobotGame/.settings
+/AndroidGame/gen
+/AndroidGame/bin
+/ImpactPhysics/.settings
+/ImpactPhysics/gen
+/ImpactPhysics/bin
