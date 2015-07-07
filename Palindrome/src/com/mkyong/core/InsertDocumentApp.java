@@ -10,6 +10,7 @@ import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.Mongo;
+import com.mongodb.MongoException;
 import com.mongodb.util.JSON;
  
 /**
@@ -110,7 +111,9 @@ public class InsertDocumentApp {
  
     } catch (UnknownHostException e) {
 	e.printStackTrace();
-    } 
+    } catch (MongoException e) {
+	e.printStackTrace();
+    }
  
   }
 }
