@@ -3,6 +3,7 @@ package com.mkyong.core;
 import java.net.UnknownHostException;
 import java.util.HashMap;
 import java.util.Map;
+
 import com.mongodb.BasicDBObject;
 import com.mongodb.BasicDBObjectBuilder;
 import com.mongodb.DB;
@@ -10,6 +11,8 @@ import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.Mongo;
+import com.mongodb.MongoClient;
+import com.mongodb.MongoClientURI;
 import com.mongodb.MongoException;
 import com.mongodb.util.JSON;
  
@@ -22,9 +25,13 @@ public class InsertDocumentApp {
  
     try {
  
-		Mongo mongo = new Mongo("ds037622.mongolab.com", 37622);
+/*		Mongo mongo = new Mongo("ds037622.mongolab.com", 37622);
 	DB db = mongo.getDB("yourdb");
- 
+*/
+    	MongoClientURI uri  = new MongoClientURI("mongodb://dcfrancisco:password@ds037622.mongolab.com:37622/docs101"); 
+        MongoClient client = new MongoClient(uri);
+        DB db = client.getDB(uri.getDatabase());
+        
 	DBCollection collection = db.getCollection("dummyColl");
  
 	// 1. BasicDBObject example
