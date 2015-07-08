@@ -28,11 +28,11 @@ public class InsertDocumentApp {
 /*		Mongo mongo = new Mongo("ds037622.mongolab.com", 37622);
 	DB db = mongo.getDB("yourdb");
 */
-    	MongoClientURI uri  = new MongoClientURI("mongodb://dcfrancisco:password@ds037622.mongolab.com:37622/docs101"); 
+    	MongoClientURI uri  = new MongoClientURI("mongodb://dcfrancisco:pass@ds037622.mongolab.com:37622/code101"); 
         MongoClient client = new MongoClient(uri);
         DB db = client.getDB(uri.getDatabase());
         
-	DBCollection collection = db.getCollection("dummyColl");
+	DBCollection collection = db.getCollection("docs101");
  
 	// 1. BasicDBObject example
 	System.out.println("BasicDBObject example...");
