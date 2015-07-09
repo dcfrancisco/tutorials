@@ -2,7 +2,9 @@ package com.journaldev.mongodb.main;
  
 /*
  * http://www.journaldev.com/3963/mongodb-java-crud-example-tutorial
-*/
+
+ ds037622.mongolab.com:37622
+ */
 
 import java.net.UnknownHostException;
  
@@ -22,9 +24,11 @@ public class MongoDBExample {
         User user = createUser();
         DBObject doc = createDBObject(user);
          
-        MongoClient mongo = new MongoClient("localhost", 27017);
-        DB db = mongo.getDB("journaldev");
-         
+        MongoClient mongo = new MongoClient("ds037622.mongolab.com", 37622);
+		
+        DB db = mongo.getDB("code101");
+        db.authenticate("dcfrancisco","".toCharArray());
+		
         DBCollection col = db.getCollection("users");
          
         //create user
