@@ -14,3 +14,7 @@
 /ImpactPhysics/.settings
 /ImpactPhysics/gen
 /ImpactPhysics/bin
+*.classpath
+*.project
+bin/
+gen/
