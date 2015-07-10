@@ -1,7 +1,7 @@
 package com.journaldev.mongodb.main;
  
 /*
- * http://www.journaldev.com/3963/mongodb-java-crud-example-tutorial
+ http://www.journaldev.com/3963/mongodb-java-crud-example-tutorial
 
  ds037622.mongolab.com:37622
  */
@@ -27,13 +27,14 @@ public class MongoDBExample {
         MongoClient mongo = new MongoClient("ds037622.mongolab.com", 37622);
 		
         DB db = mongo.getDB("code101");
-        db.authenticate("dcfrancisco","".toCharArray());
+        db.authenticate("dcfrancisco","@".toCharArray());
 		
         DBCollection col = db.getCollection("users");
          
         //create user
         WriteResult result = col.insert(doc);
-        System.out.println(result.getUpsertedId());
+       	System.out.println("insert"); 
+		System.out.println(result.getUpsertedId());
         System.out.println(result.getN());
         System.out.println(result.isUpdateOfExisting());
         System.out.println(result.getLastConcern());
@@ -46,7 +47,7 @@ public class MongoDBExample {
         }
          
         //update example
-        user.setName("Pankaj Kumar");
+        user.setName("Danny Francisco");
         doc = createDBObject(user);
         result = col.update(query, doc);
         System.out.println(result.getUpsertedId());
@@ -60,7 +61,7 @@ public class MongoDBExample {
         System.out.println(result.getN());
         System.out.println(result.isUpdateOfExisting());
         System.out.println(result.getLastConcern());
-         
+       
         //close resources
         mongo.close();
     }
@@ -72,15 +73,18 @@ public class MongoDBExample {
         docBuilder.append("name", user.getName());
         docBuilder.append("role", user.getRole());
         docBuilder.append("isEmployee", user.isEmployee());
+		docBuilder.append("status", user.getStatus());
+		
         return docBuilder.get();
     }
  
     private static User createUser() {
         User u = new User();
-        u.setId(2);
-        u.setName("Pankaj");
+        u.setId(7);
+        u.setName("Danny");
         u.setEmployee(true);
-        u.setRole("CEO");
+        u.setRole("GUEST");
+		u.setStatus("R");
         return u;
     }
      

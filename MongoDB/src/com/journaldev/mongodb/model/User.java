@@ -6,7 +6,18 @@ public class User {
     private String name;
     private String role;
     private boolean isEmployee;
-     
+    private String status;
+
+	public void setStatus(String status)
+	{
+		this.status = status;
+	}
+
+	public String getStatus()
+	{
+		return status;
+	}
+	
     public int getId() {
         return id;
     }
