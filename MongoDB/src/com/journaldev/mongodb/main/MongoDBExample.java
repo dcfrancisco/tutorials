@@ -27,7 +27,7 @@ public class MongoDBExample {
         MongoClient mongo = new MongoClient("ds037622.mongolab.com", 37622);
 		
         DB db = mongo.getDB("code101");
-        db.authenticate("dcfrancisco","pass@".toCharArray());
+        db.authenticate("dcfrancisco","@gina4462".toCharArray());
 		
         DBCollection col = db.getCollection("users");
          
